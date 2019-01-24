@@ -1,0 +1,22 @@
+@import '_main';
+
+.oops-container {
+  text-align: center;
+  background: linear-gradient(#abe6ff, #FFF);
+  color: #235875;
+  border-radius: 10px;
+}
+
+.oops-container h1 {
+  padding: 40px 30px 10px 30px;
+}
+
+.oops-container img {
+  width: 100%;
+}
+
+.blog-date {
+  margin:0;
+  text-decoration:underline;
+  color: grey;
+}

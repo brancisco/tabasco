@@ -1,0 +1,77 @@
+@import 'modules/utility';
+@import 'partials/grid';
+@import 'partials/note';
+@import 'partials/color';
+@import 'partials/card';
+@import 'partials/banner';
+@import 'partials/banner-menu';
+
+@import url('https://fonts.googleapis.com/css?family=Lora|Pacifico');
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: 'Lora', serif;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.8em;
+}
+
+p small {
+  color: gray;
+}
+
+a:link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+a:link.in-text {
+  color: $link-color;
+} 
+
+a:visited.in-text {
+  color: $link-color;
+}
+
+#home_menu {
+  margin: auto;
+}
+
+#home_menu ul {
+  padding: 0;
+  text-align: center;
+}
+
+#home_menu ul li {
+  display: inline-block;
+  margin: 0 8px 0 0;
+}
+
+.article-format {
+  max-width: 710px;
+  margin: auto;
+}
+
+.article-format p {
+  text-align: justify;
+}
+
+.centered-text {
+  text-align: center;
+}

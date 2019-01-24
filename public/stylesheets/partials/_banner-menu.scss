@@ -1,0 +1,68 @@
+@import 'color';
+
+.banner-menu {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+}
+
+.banner-menu p {
+  margin: 0;
+  padding: 0 20px 0 0;
+  display: inline-block;
+}
+
+.banner-menu ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border: solid 3px #f4f4f4;
+  border-radius: 30px;
+  background-color: #f4f4f4;
+}
+
+.banner-menu.multi ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  // border: none;
+  border-radius: 0;
+  background-color: #f4f4f4;
+}
+
+.banner-menu ul div {
+  margin: 0 -5px 0 -5px;
+}
+
+.banner-menu ul div a li {
+  display: inline-block;
+  padding: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
+  // border: solid 1px black;
+  border-radius: 30px;
+  background-color: white;
+  height: 30px;
+  line-height: 30px;
+}
+
+.banner-menu.multi ul div a li {
+  border-radius: 0;
+  background-color: white;
+  height: 30px;
+  line-height: 30px;
+}
+
+.banner-menu ul div a li.selected {
+  background-color: $dark-blue;
+  color: white;
+}
+
+.banner-menu.multi ul div a li.selected {
+  background-color: $dark-red;
+  color: white;
+}
+
+.banner-menu ul div a li.not-selected {
+  background-color: inherit;
+  color: #6d6d6d;
+}

@@ -1,0 +1,6 @@
+@mixin centerer($horizontal: 50%, $vertical: 50%) {
+  position: absolute;
+  top: $vertical;
+  left: $horizontal;
+  transform: translate(-50%, -50%);
+}

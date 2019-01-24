@@ -1,0 +1,48 @@
+@import 'color';
+
+$info-text-color: #1f74ad;
+$success-text-color: #187b52;
+$warn-text-color: #777022;
+$danger-text-color: #c43633;
+
+%note {
+  max-width: 670px;
+  padding: 15px 20px 15px 20px;
+  margin: 15px auto 15px auto;
+  border-radius: 7px;
+  border-left: 7px solid;
+  box-shadow: -2px 0px 12px 2px #EEE;
+  text-align: center;
+}
+
+%note p {
+  margin: 0;
+}
+
+.note-info {
+  @extend %note;
+  background-color: $light-blue;
+  color: $info-text-color;
+  border-color: $dark-blue;
+}
+
+.note-success {
+  @extend %note;
+  background-color: $light-green;
+  color: $success-text-color;
+  border-color: $dark-green;
+}
+
+.note-warn {
+  @extend %note;
+  background-color: $light-yellow;
+  color: $warn-text-color;
+  border-color: $dark-yellow;
+}
+
+.note-danger {
+  @extend %note;
+  background-color: $light-red;
+  color: $danger-text-color;
+  border-color: $dark-red;
+}

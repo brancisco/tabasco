@@ -1,0 +1,234 @@
+.r-container {
+  padding: 15px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.r-container-open {
+  padding: 15px;
+}
+
+.row {
+  box-sizing: border-box;
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px 7px -15px;
+}
+
+%col {
+  box-sizing: border-box;
+  position: relative;
+  width: 7.33%;
+  // margin: 0 0.5% 0 0.5%;
+  padding: 0 15px 0 15px;
+  // float: left;
+}
+
+.col-0 {
+  width: 0;
+}
+
+.col, .col-1 {
+  @extend %col;
+}
+
+.col-2 {
+  @extend %col;
+  width: 14.66%;
+}
+
+.col-3 {
+  @extend %col;
+  width: 23%;
+}
+
+.col-4 {
+  @extend %col;
+  width: 33.33%;
+}
+
+.col-5 {
+  @extend %col;
+  width: 39.66%;
+}
+
+.col-6 {
+  @extend %col;
+  width: 50%;
+}
+
+.col-7 {
+  @extend %col;
+  width: 56.33%;
+}
+
+.col-8 {
+  @extend %col;
+  width: 64.33%;
+}
+
+.col-9 {
+  @extend %col;
+  width: 73%;
+}
+
+.col-10 {
+  @extend %col;
+  width: 81.33%;
+}
+
+.col-11 {
+  @extend %col;
+  width: 89.66%;
+}
+
+.col-12 {
+  @extend %col;
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  %col\@md {
+    width: 7.33%;
+    // margin: 0 0.5% 0 0.5%;
+    padding: 0 15px 0 15px;
+    // float: left;
+  }
+
+  .col-0\@md {
+    width: 0;
+  }
+
+  .col\@md, .col-1\@md {
+    @extend %col\@md;
+  }
+
+  .col-2\@md {
+    @extend %col\@md;
+    width: 14.66%;
+  }
+
+  .col-3\@md {
+    @extend %col\@md;
+    width: 23%;
+  }
+
+  .col-4\@md {
+    @extend %col\@md;
+    width: 33.33%;
+  }
+
+  .col-5\@md {
+    @extend %col\@md;
+    width: 39.66%;
+  }
+
+  .col-6\@md {
+    @extend %col\@md;
+    width: 50%;
+  }
+
+  .col-7\@md {
+    @extend %col\@md;
+    width: 56.33%;
+  }
+
+  .col-8\@md {
+    @extend %col\@md;
+    width: 64.33%;
+  }
+
+  .col-9\@md {
+    @extend %col\@md;
+    width: 73%;
+  }
+
+  .col-10\@md {
+    @extend %col\@md;
+    width: 81.33%;
+  }
+
+  .col-11\@md {
+    @extend %col\@md;
+    width: 89.66%;
+  }
+
+  .col-12\@md {
+    @extend %col\@md;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  %col\@sm {
+    width: 7.33%;
+    // margin: 0 0.5% 0 0.5%;
+    padding: 0 15px 0 15px;
+    // float: left;
+  }
+
+  .col-0\@sm {
+    width: 0;
+  }
+
+  .col\@sm, .col-1\@sm {
+    @extend %col\@sm;
+  }
+
+  .col-2\@sm {
+    @extend %col\@sm;
+    width: 14.66%;
+  }
+
+  .col-3\@sm {
+    @extend %col\@sm;
+    width: 23%;
+  }
+
+  .col-4\@sm {
+    @extend %col\@sm;
+    width: 33.33%;
+  }
+
+  .col-5\@sm {
+    @extend %col\@sm;
+    width: 39.66%;
+  }
+
+  .col-6\@sm {
+    @extend %col\@sm;
+    width: 50%;
+  }
+
+  .col-7\@sm {
+    @extend %col\@sm;
+    width: 56.33%;
+  }
+
+  .col-8\@sm {
+    @extend %col\@sm;
+    width: 64.33%;
+  }
+
+  .col-9\@sm {
+    @extend %col\@sm;
+    width: 73%;
+  }
+
+  .col-10\@sm {
+    @extend %col\@sm;
+    width: 81.33%;
+  }
+
+  .col-11\@sm {
+    @extend %col\@sm;
+    width: 89.66%;
+  }
+
+  .col-12\@sm {
+    @extend %col\@sm;
+    width: 100%;
+  }
+}
