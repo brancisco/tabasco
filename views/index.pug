@@ -1,5 +1,38 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='r-container-open')
+    div(class='row')
+      div(class='col-5 col-12@md')
+        div(class='cover-page left-panel')
+          div(id='cover_page_info')
+            div(id='home_menu')
+              ul
+                li: a(href=links.home) home
+                li: a(href=links.blog) thoughts
+                li: a(href=links.projects) projects
+                li: a(href=links.about) about
+            h1 #{name}
+            div(id='portrait_wrap')
+              img(src=portrait.img_src,
+                  alt=portrait.alt,
+                  id ='portrait')
+            div(class='centered-text')
+              h2 #{tagline}
+              h3 <img src='images/geo.png' style='width:12px;height:auto;'> #{location}
+            div(id='cover_page_links')
+              for link in cover_page_links
+                a(href=link.href): img(src=link.img_src, alt=link.alt)
+      div(class='col-7 col-12@md')
+        div(class='cover-page')
+          block right-panel
+            div(id='panel_wrap')
+              div(class='r-container')
+                div(class='row')
+                  div(class='note-info')
+                    p Hey, welcome to my personal website. My goal here is to make connections with others (you!) by sharing my some of my projects and ideas.
+                for item in panel_items
+                  div(class='row centered-text link-panel')
+                    div(class='col-12')
+                      h2: a(href=item.href) #{item.title}
+                      p #{item.description}

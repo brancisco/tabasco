@@ -1,0 +1,59 @@
+doctype html
+html
+  head
+    title Styleguide
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='/stylesheets/blog.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  body
+    div(class='r-container')
+      div(class='row')
+        div(class='col-12')
+          h1(class='centered-text') Styleguide
+      div(class='row')
+        div(class='col-6 col-12@sm')
+          h1(class='centered-text') Notes
+          h2(class='centered-text') Info
+          div(class='note-info')
+            p Hey, welcome to my personal website. My goal here is to make connections with others (you!) by sharing my some of my projects and ideas.
+          h2(class='centered-text') Success
+          div(class='note-success')
+            p Hey, welcome to my personal website. My goal here is to make connections with others (you!) by sharing my some of my projects and ideas.
+          h2(class='centered-text') Warning
+          div(class='note-warn')
+            p Hey, welcome to my personal website. My goal here is to make connections with others (you!) by sharing my some of my projects and ideas. 
+          h2(class='centered-text') Danger
+          div(class='note-danger')
+            p Hey, welcome to my personal website. My goal here is to make connections with others (you!) by sharing my some of my projects and ideas.
+        div(class='col-6 col-12@sm')
+          h1(class='centered-text') Cards
+          h2(class='centered-text') Card Square
+          a(href='#' class='card')
+            div(class='card')
+              div(class='card-im',
+                style='background-image: url("/images/blog-assets/feet-wet-banner.png");')
+              div(class='card-info')
+                p(style='float:right;'): small top right
+                p(style='text-align:left;'): small top left
+                h1 a title
+                p some kind of description
+          h2(class='centered-text') Card Rounded
+          a(href='#' class='card')
+            div(class='card rounded')
+              div(class='card-im',
+                style='background-image: url("/images/blog-assets/feet-wet-banner.png");')
+              div(class='card-info')
+                p(style='float:right;'): small top right
+                p(style='text-align:left;'): small top left
+                h1 a title
+                p some kind of description
+      div(class='row')
+        div(class='col-12')
+          h1(class='centered-text') Small Banner
+          div(class='banner' style='color:white; background-image: url("/images/cartoon-selfi-banner.png");')
+            h1 Text Centered Banner
+      div(class='row')
+        div(class='col-12')
+          h1(class='centered-text') Large Banner
+          div(class='banner-lg high' style='color:white; background-image: url("/images/cartoon-selfi-banner.png");')
+            h1 Text High Banner

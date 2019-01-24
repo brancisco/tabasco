@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    title #{name}
+    link(rel='stylesheet', href='/stylesheets/blog.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  body
+    div(class='r-container')
+      div(class='row')
+        div(class='col-12')
+          div(id='home_menu')
+            ul
+              li: a(href=links.home) home
+              li: a(href=links.blog) thoughts
+              li: a(href=links.projects) projects
+              li: a(href=links.about) about
+      div(class='row')
+        div(class='col-12')
+          div(class='banner-lg high' style='color:white; background-image: url("/images/cartoon-selfi-banner.png");')
+            h1 #{bannerHeader}
+      div(class='row')
+        div(class='col-12')
+          div(class='banner-menu')
+            p sort by
+            ul
+              div
+                - let oldest = "not-selected"
+                - let newest = "not-selected"
+                - let category_url = ''
+                if sortby != 'oldest'
+                  - newest = 'selected'
+                else
+                  - oldest = 'selected'
+                if category
+                  - category_url = 'category/' + category
+                <a href='/#{page}/sort/newest/#{category_url}'>
+                  li(class=newest) newest
+                </a>
+                <a href='/#{page}/sort/oldest/#{category_url}'>
+                  li(class=oldest) oldest
+                </a>
+          if categories.length != 0
+            div(class='banner-menu multi')
+              p category
+              ul
+                div
+                  for _category in categories
+                    - var selected = 'not-selected'
+                    if (_category) == category
+                      - selected = 'selected'
+                    <a href='/#{page}/sort/#{sortby}/category/#{_category}'>
+                      li(class=selected) #{_category}
+                    </a>
+      div(class='row')
+        if items.length != 0
+          for item in items
+            div(class='col-4 col-6@md col-12@sm')
+              a(href='/'+itemPage +'/'+item.slug class='card'): div(class='card rounded')
+                div(class='card-im',
+                  style='background-image: url("'+item.cover_img_link+'");')
+                div(class='card-info')
+                  p(style='float:right;'): small #{item.category}
+                  p(style='text-align:left;'): small #{item.created}
+                  h1 #{i} #{item.title}
+                  p #{item.preview_subtitle}
+        else
+          div(class='col-12')
+            if categories.length == 0
+              div(class='note-info')
+                p I don't have any posts yet! They will be coming soon.
+            else
+              div(class='note-danger')
+                p Sorry, there doesn't seem to be any posts from the category "#{category}".

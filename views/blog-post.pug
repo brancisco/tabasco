@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/stylesheets/blog.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style(type='text/css')=article.style
+  body
+    div(class='r-container')
+      div(class='row')
+        div(class='col-12')
+          div(id='home_menu')
+            ul
+              li: a(href=links.home) home
+              li: a(href=links.blog) thoughts
+              li: a(href=links.projects) projects
+              li: a(href=links.about) about
+      div(class='row')
+        div(class='col-12')
+          div(class='banner-lg high' style='background-image:url('+article.cover_img_link+');')
+            h1 #{article.title}
+      div(class='row')
+        div(class='col-12')
+          if article.created == article.updated
+            p(class='blog-date'): small created on #{article.created}
+          else
+            p(class='blog-date'): small created on #{article.created} | updated on #{article.updated}
+      !=article.content
