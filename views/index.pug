@@ -19,7 +19,7 @@ block content
                   id ='portrait')
             div(class='centered-text')
               h2 #{tagline}
-              h3 <img src='images/geo.png' style='width:12px;height:auto;'> #{location}
+              h3 <img src='/images/geo.png' style='width:12px;height:auto;'> #{location}
             div(id='cover_page_links')
               for link in cover_page_links
                 a(href=link.href): img(src=link.img_src, alt=link.alt)

@@ -24,7 +24,7 @@ const links = {
 var coverPageData = {
   name: 'Brandon Aguirre',
   portrait: {
-    img_src: 'images/me.jpg',
+    img_src: '/images/me.jpg',
     alt: 'Portrait of Brandon Aguirre'
   },
   tagline: 'Computer Science',
@@ -49,12 +49,12 @@ var coverPageData = {
   cover_page_links: [
     {
       href   : links.github,
-      img_src: 'images/github-logos/PNG/GitHub-Mark-64px.png',
+      img_src: '/images/github-logos/PNG/GitHub-Mark-64px.png',
       alt    : 'Link to Brandon\'s GitHub'
     },
     {
       href   : links.linkedin,
-      img_src: 'images/linked-in-logos/Black/In-Black-54px-TM.png',
+      img_src: '/images/linked-in-logos/Black/In-Black-54px-TM.png',
       alt    : 'Link to Brandon\'s LinkedIn'
     }
   ],
