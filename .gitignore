@@ -5,3 +5,4 @@ node_modules
 .env
 .sass-cache
 *.local.*
+log*
