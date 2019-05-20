@@ -192,9 +192,9 @@ router.get('/styleguide', function(req, res, next) {
   res.render('styleguide', {});
 });
 
-router.get('/api/push', function(req, res, next) {
+router.post('/api/push', function(req, res, next) {
   let pusher = { pusher: req.body.pusher }
-  res.json(pusher)
+  res.status(204).send({});
 });
 
 
