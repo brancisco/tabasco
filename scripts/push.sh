@@ -11,10 +11,7 @@ log_file=pull.log
 location=$log_dir/$log_file
 
 echo "$(date)" >> $location
-stash_msg=$(git stash)
-[ "$stash_msg" = "No local changes to save" ] && change=0 || change=1 
-[ "$change" == "1" ] && echo $stash_msg >> $location
-git checkout $1
-git pull >> $location
-[ "$change" == "1" ] && git stash clear >> $location
+git fetch --all >> $location
+git reset --hard origin/$1 >> $location
+git checkout $1 >> $location
 exit 0
