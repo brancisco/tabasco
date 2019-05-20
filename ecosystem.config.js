@@ -3,6 +3,7 @@ module.exports = {
     name: "tabasco",
     script: "./bin/www",
     watch: true,
+    append_env_to_name: true,
     env: {
       "PORT": 3000,
       "NODE_ENV": "development"
