@@ -7,7 +7,8 @@
     "restart": "/home/pi/www/node_modules/pm2/bin/pm2 restart ecosystem.config.js",
     "stop": "/home/pi/www/node_modules/pm2/bin/pm2 stop ecosystem.config.js",
     "dev": "nodemon ./bin/www",
-    "staging": "/home/pi/www/node_modules/pm2/bin/pm2 start ecosystem.config.js --env staging"
+    "staging": "/home/pi/www/node_modules/pm2/bin/pm2 start ecosystem.config.js --env staging",
+    "eslint": "node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
     "acorn": "^6.0.5",
@@ -26,5 +27,9 @@
     "popper": "^1.0.1",
     "popper.js": "^1.14.6",
     "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0"
   }
 }
