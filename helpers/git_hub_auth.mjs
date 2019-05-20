@@ -7,11 +7,8 @@ module.exports = {
     return `sha1=${sig}`
   },
   compareSignature: function (sig, gen_sig) {
-    console.log(sig)
     const source = Buffer.from(sig);
     const comparison = Buffer.from(gen_sig);
-    console.log(source);
-    console.log(comparison);
     return crypto.timingSafeEqual(source, comparison);
   }
 }
