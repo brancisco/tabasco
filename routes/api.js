@@ -16,15 +16,18 @@ router.post('/push', function(req, res, next) {
   if (truth === false) {
     console.log('WARNING: SIG PROVIDED BUT IS INCORRECT-- SOMEONE MAY BE TRYING TO SPOOF')
     res.status(400).send({});
-    return;
   }
-
-  if (body.ref === 'refs/heads/master') {
-    console.log('PULLING LATEST FROM MASTER')
-    let exec = spawn('sh', ['push.sh'], { cwd: './scripts/'})
+  else {
+    if (body.ref === 'refs/heads/master' && process.env.NODE_ENV === 'production') {
+      console.log('PULLING LATEST FROM MASTER')
+      let exec = spawn('sh', ['./scripts/push.sh', 'master', process.env.NODE_ENV])
+    }
+    if (body.ref === 'refs/heads/staging' && process.env.NODE_ENV === 'staging') {
+      console.log('PULLING LATEST FROM STAGING')
+      let exec = spawn('sh', ['./scripts/push.sh', 'staging', process.env.NODE_ENV])
+    }
+    res.status(204).send({});
   }
-  res.status(204).send({});
-  return;
 });
 
 
