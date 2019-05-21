@@ -12,7 +12,6 @@ log_file=pull.log
 location=$log_dir/$log_file
 
 echo "$(date)" >> $location
-git fetch --all >> $location
 git reset --hard origin/$1 >> $location
-git checkout $1 >> $location
+git pull >> $location
 exit 0
