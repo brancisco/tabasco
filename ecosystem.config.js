@@ -4,7 +4,7 @@ module.exports = {
     script: "./bin/www",
     watch: true,
     "ignore_watch" : ["node_modules/*", "public/*", "\.git", "*\.log", "\.logs/*"],
-    append_env_to_name: true,
+name: true,
     env: {
       "PORT": 3000,
       "NODE_ENV": "development"

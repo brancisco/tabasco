@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "/home/pi/www/node_modules/pm2/bin/pm2 start ecosystem.config.js --env production",
-    "restart": "/home/pi/www/node_modules/pm2/bin/pm2 restart ecosystem.config.js",
-    "stop": "/home/pi/www/node_modules/pm2/bin/pm2 stop ecosystem.config.js",
+    "start": "./node_modules/pm2/bin/pm2 start ecosystem.config.js --env production",
+    "staging": "./node_modules/pm2/bin/pm2 start ecosystem.config.js --env staging",
     "dev": "nodemon ./bin/www",
-    "staging": "/home/pi/www/node_modules/pm2/bin/pm2 start ecosystem.config.js --env staging",
     "eslint": "node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
