@@ -2,7 +2,7 @@
 
 # usage: push.sh branch node_env
 
-if [[ "$2" != "production" || "$2" == "staging" ]]; then
+if [[ "$2" != "production" && "$2" != "staging" ]]; then
   exit 1
 fi
 
