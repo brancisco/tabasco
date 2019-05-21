@@ -47,7 +47,7 @@ router.post('/push', function(req, res, next) {
         spawn('bash', ['./scripts/push.sh', 'master', process.env.NODE_ENV]);
       }
       if (body.pull_request.base.ref === 'staging' && body.action === 'closed' &&
-          body.pull_request.merged === true && process.env.NODE_ENV === 'production') {
+          body.pull_request.merged === true && process.env.NODE_ENV === 'staging') {
         console.log('PULLING LATEST FROM STAGING --reason pull request');
         spawn('bash', ['./scripts/push.sh', 'staging', process.env.NODE_ENV]);
       }
