@@ -25,7 +25,7 @@ router.post('/push', function(req, res, next) {
       console.log('PULLING LATEST FROM MASTER');
       spawn('sh', ['./scripts/push.sh', 'master', process.env.NODE_ENV]);
     }
-    if (body.ref === 'refs/heads/staging' && process.env.NODE_ENV === 'production') {
+    if (body.ref === 'refs/heads/staging' && process.env.NODE_ENV === 'staging') {
       console.log('PULLING LATEST FROM STAGING');
       spawn('sh', ['./scripts/push.sh', 'staging', process.env.NODE_ENV]);
     }
