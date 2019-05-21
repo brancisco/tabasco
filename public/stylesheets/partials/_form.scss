@@ -1,9 +1,11 @@
 .tbsco-form-wrap {
+  display: block;
   padding: 20px;
   min-width: 200px;
   max-width: 400px;
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
   border-radius: 7px;
+  margin: auto;
 }
 
 .tbsco-form-wrap form {
@@ -11,12 +13,22 @@
 }
 
 .tbsco-form-wrap form input {
+  font-size: 1em;
+  margin-top: 4px;
   box-sizing: border-box;
   display: block;
   width: 100%;
   margin-bottom: 10px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  text-indent: 10px;
+  height: 30px;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .tbsco-form-wrap form label {
   display: block;
+  color: #222222;
 }
