@@ -8,7 +8,7 @@ fi
 
 log_dir=.logs
 log_file=pull.log
-location=$main_dir/$log_dir/$log_file
+location=$log_dir/$log_file
 
 echo "$(date), $location, *$1*" >> $location
 git pull >> $location
