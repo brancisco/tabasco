@@ -8,9 +8,8 @@ fi
 
 log_dir=.logs
 log_file=pull.log
-location=$log_dir/$log_file
+location=$main_dir/$log_dir/$log_file
 
-echo "$(date)" >> $location
-git reset --hard origin/$1 >> $location
+echo "$(date), $location, *$1*" >> $location
 git pull >> $location
 exit 0
