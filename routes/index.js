@@ -188,6 +188,10 @@ router.get('/project-page/:slug', function(req, res, next) {
   );
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login', {});
+});
+
 router.get('/styleguide', function(req, res, next) {
   res.render('styleguide', {});
 });
