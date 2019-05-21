@@ -23,11 +23,11 @@ router.post('/push', function(req, res, next) {
   else {
     if (body.ref === 'refs/heads/master' && process.env.NODE_ENV === 'production') {
       console.log('PULLING LATEST FROM MASTER');
-      spawn('sh', ['./scripts/push.sh', 'master', process.env.NODE_ENV]);
+      spawn('bash', ['./scripts/push.sh', 'master', process.env.NODE_ENV]);
     }
     if (body.ref === 'refs/heads/staging' && process.env.NODE_ENV === 'staging') {
       console.log('PULLING LATEST FROM STAGING');
-      spawn('sh', ['./scripts/push.sh', 'staging', process.env.NODE_ENV]);
+      spawn('bash', ['./scripts/push.sh', 'staging', process.env.NODE_ENV]);
     }
     res.status(204).send({});
   }
