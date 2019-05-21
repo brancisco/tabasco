@@ -3,8 +3,8 @@ module.exports = {
     name: "tabasco",
     script: "./bin/www",
     watch: true,
-    "ignore_watch" : ["node_modules/*", "public/*"],
-    append_env_to_name: true,
+    "ignore_watch" : ["node_modules/*", "public/*", "\.git", "*\.log", "\.logs/*"],
+name: true,
     env: {
       "PORT": 3000,
       "NODE_ENV": "development"
