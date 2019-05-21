@@ -1,0 +1,48 @@
+@import 'color';
+
+.tbsco-btn {
+  border: 0;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.tbsco-btn:hover {
+  border: 0;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.4);
+  color: white;
+  cursor: pointer;
+}
+
+.tbsco-btn.sm {
+  width: 30px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.tbsco-btn.md {
+  width: 50px;
+  height: 27px;
+  border-radius: 7px;
+}
+
+.tbsco-btn.lg {
+  width: 70px;
+  height: 32px;
+  border-radius: 10px;
+}
+
+.tbsco-btn.info {
+  background-color: $dark-blue;
+}
+
+.tbsco-btn.success {
+  background-color: $dark-green;
+}
+
+.tbsco-btn.warn {
+  background-color: $dark-yellow;
+}
+
+.tbsco-btn.danger {
+  background-color: $dark-red;
+}
