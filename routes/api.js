@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { spawn } = require('child_process');
 const validate = require('../helpers/git_hub_auth.mjs');
+const passHasher = require('../helpers/hash_password.js');
 
 router.post('/push', function(req, res, next) {
   const body = req.body;
@@ -53,6 +54,34 @@ router.post('/push', function(req, res, next) {
       }
     }
     res.status(204).send({});
+  }
+});
+
+router.post('/login', function(req, res, next) {
+  const uname = req.body.username;
+  const pass = req.body.password;
+  if (!passHasher.validatePassword(pass, process.env.LOGIN_SECRET, process.env.LOGIN_PASS_HASH)) {
+    res.status(401).send({});
+    return;
+  }
+  else {
+    if (uname === process.env.LOGIN_UNAME)
+    res.status(200).send({
+      _links: {
+        self: { href: '/login' },
+        admin: [
+          {
+            title: 'Dashboard',
+            href: '/admin/dashboard'
+          },
+          {
+            title: 'Blog Editor',
+            href: '/admin/blog-editor'
+          }
+        ]
+      }
+    });
+    return;
   }
 });
 
