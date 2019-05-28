@@ -1,0 +1,11 @@
+mixin style_imports(tags=[])
+  each attrs in tags
+    link(type='text/css' rel='stylesheet')&attributes(attrs)
+
+mixin meta_imports(tags=[])
+  each attrs in tags
+    meta&attributes(attrs)
+
+mixin javascript_imports(tags=[])
+  each attrs in tags
+    script&attributes(attrs)

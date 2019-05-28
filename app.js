@@ -3,13 +3,13 @@ require('dotenv').load();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+const sessions = require('client-sessions');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
-var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -20,7 +20,12 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(sessions({
+  cookieName: 'tabascoLoginSession',
+  secret: process.env.SESSION_SECRET,
+  duration: 20 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000
+}));
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -31,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
-app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

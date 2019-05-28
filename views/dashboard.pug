@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(class='r-container')
+    div(class='row')
+      div(class='col-12')
+        table(id='posts_table' class='spaced selectable')
+          thead
+            tr(class='bookend')
+              each row in ['id', 'Cover', 'Created', 'Updated', 'Title', 'Type']
+                th=row
+          tbody

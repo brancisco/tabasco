@@ -1,0 +1,13 @@
+div
+  style=article.style
+div(class='row')
+  div(class='col-12')
+    div(class='banner-lg high' style='background-image:url('+article.cover_img_link+');')
+      h1 #{article.title}
+div(class='row')
+  div(class='col-12')
+    if article.created == article.updated
+      p(class='blog-date'): small created on #{article.created}
+    else
+      p(class='blog-date'): small created on #{article.created} | updated on #{article.updated}
+!=article.content

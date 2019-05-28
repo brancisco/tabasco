@@ -1,8 +1,12 @@
 doctype html
+include mixins/head
 html
   head
+
     title #{name}
-    link(rel='stylesheet', href='/stylesheets/index.css')
+    +style_imports(imp_style)
+    +meta_imports(imp_meta)
+    +javascript_imports(imp_js)
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
   body
     block content

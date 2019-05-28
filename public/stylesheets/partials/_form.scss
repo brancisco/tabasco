@@ -9,16 +9,14 @@
 }
 
 .tbsco-form-wrap form {
-  
 }
 
 .tbsco-form-wrap form input {
   font-size: 1em;
-  margin-top: 4px;
   box-sizing: border-box;
   display: block;
   width: 100%;
-  margin-bottom: 10px;
+  margin: 4px 0 10px 0;
   outline: none;
   border: none;
   border-radius: 30px;
@@ -31,4 +29,12 @@
 .tbsco-form-wrap form label {
   display: block;
   color: #222222;
+}
+
+.tbsco-form-wrap form textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100px;
+  margin: 4px 0 10px 0;
 }

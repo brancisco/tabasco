@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  div(class='r-container-open')
+    div(class='row')
+      div(class='col-12@md col-6')
+        div(class='tbsco-form-wrap')
+          form(action='_')
+            div(class='input-group')
+              label(for='title') Title
+              input(id='title')
+            div(class='input-group')
+              label(for='slug') Slug
+              input(id='slug')
+            div(class='input-group')
+              label(for='preview_title') Preview Title
+              input(id='preview_title')
+            div(class='input-group')
+              label(for='type') Type
+              input(id='type')
+            div(class='input-group')
+              label(for='category') Category
+              input(id='category')
+            div(class='input-group')
+              label(for='cover_img') Cover Image Link
+              input(id='cover_img')
+            div(class='input-group')
+              label(for='style') Style
+              textarea(id='style')
+            div(class='input-group')
+              label(for='tabasco_editor') Content
+              textarea(id='tabasco_editor')
+            button(class='tbsco-btn lg info' type='button' onclick='updatePreview()') Preview
+            button(class='tbsco-btn lg success' type='button' onclick='saveArticle()') Save
+      div(class='col-12@md col-6')
+        div(id='render_container')

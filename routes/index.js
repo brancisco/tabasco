@@ -64,11 +64,13 @@ coverPageData.links = links
 /* GET home page. */
 router.get('/', function(req, res, next) {
   coverPageData.name = 'Brandon Aguirre'
+  coverPageData.imp_style = [{href: '/stylesheets/index.css'}]
   res.render('index', coverPageData);
 });
 
 router.get('/about', function(req, res, next) {
   coverPageData.name = 'About Me'
+  coverPageData.imp_style = [{href: '/stylesheets/index.css'}]
   res.render('about', coverPageData);
 });
 
@@ -109,6 +111,7 @@ function loadPreviewPage (locals, req, res, next) {
 router.get('/blog(/sort/:sortby(newest|oldest)/?(category/:category)?)?', function(req, res, next) {
   console.log(req.url);
   let locals = {
+    imp_style: [{ href: '/stylesheets/blog.css' }],
     name: 'Blog',
     bannerHeader: 'A collection of my thoughts on all things computer science.',
     page: 'blog',
@@ -138,9 +141,9 @@ router.get('/blog-post/:slug', function(req, res, next) {
         });
       }
       else {
-        article[0].content = pug.render(article[0].content);
+        article.content = pug.render(article.content);
         res.render('blog-post', {
-          article: article[0],
+          article: article,
           links: links,
         });
       }
@@ -151,6 +154,7 @@ router.get('/blog-post/:slug', function(req, res, next) {
 router.get('/projects(/sort/:sortby(newest|oldest)/?(category/:category)?)?', function(req, res, next) {
   let locals = {
     name: 'Projects',
+    imp_style: [{ href: '/stylesheets/blog.css' }],
     bannerHeader: 'A collection of projects I\'ve worked on.',
     page: 'projects',
     itemPage: 'project-page',
@@ -171,16 +175,18 @@ router.get('/project-page/:slug', function(req, res, next) {
           error: err
         });
       }
-      else if (article.length < 1) {
+      else if (article === undefined) {
         res.render('error', {
+          name: 'Error 404',
+          imp_style: '/stylesheets/main.css',
           message: 'Sorry, The project you are looking for doesn\'t seem to exist.',
           error: {status: 404, stack: 'No projects came back with the slug entered'},
         });
       }
       else {
-        article[0].content = pug.render(article[0].content);
+        article.content = pug.render(article.content);
         res.render('blog-post', {
-          article: article[0],
+          article: article,
           links: links,
         });
       }
@@ -188,12 +194,14 @@ router.get('/project-page/:slug', function(req, res, next) {
   );
 });
 
-router.get('/login', function(req, res, next) {
-  res.render('login', {});
-});
-
 router.get('/styleguide', function(req, res, next) {
-  res.render('styleguide', {});
+  res.render('styleguide', {
+    name: 'Styleguide',
+    imp_style: [
+      { href: '/stylesheets/main.css' },
+      { href: '/stylesheets/blog.css' }
+    ]
+  });
 });
 
 module.exports = router;

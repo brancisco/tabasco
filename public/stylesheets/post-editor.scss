@@ -1,0 +1,21 @@
+@import 'main.scss';
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+.tbsco-form-wrap {
+  max-width: 100%;
+}
+
+#render_container {
+  max-height: calc(100vh - 40px);
+  overflow: scroll;
+}
+
+textarea {
+  background: #222222;
+  color: white;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  padding: 10px;
+  font-family: 'Inconsolata', monospace;
+  max-width: 100%;
+  min-width: 100%;
+}

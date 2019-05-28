@@ -1,0 +1,45 @@
+$border-color: #E9E9E9;
+$hover-color: #EEEEEE;
+$background-color: #FAFAFA;
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+table thead {
+  border-bottom: 2px solid $border-color;
+  background: white;
+}
+
+thead tr {
+  background-color: #444444;
+  color: white;
+}
+
+tr {
+  border-bottom: 1px solid $border-color;
+  background: $background-color;
+}
+
+tr.bookend {
+  border-bottom: 0;
+}
+
+
+th, td {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.table-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+table.selectable tbody tr:hover {
+  cursor: pointer;
+  background: $hover-color;
+}
