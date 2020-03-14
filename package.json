@@ -9,7 +9,7 @@
     "eslint": "node_modules/eslint/bin/eslint.js"
   },
   "dependencies": {
-    "acorn": "^6.0.5",
+    "acorn": "^6.4.1",
     "bootstrap": "^4.2.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
